@@ -1,4 +1,5 @@
-﻿var siskot = ['Tiina', 'Tanja', 'Terhi']
+﻿var siskot = ['Tiina', 'Tanja', 'Terhi'];
+var currentSister  = 0;
 
 //Container
 var HelloContainer = React.createClass({
@@ -6,10 +7,9 @@ var HelloContainer = React.createClass({
     render: function()
     {
         return (
-            <div>
-              <HelloWorld name={siskot[0] }/>
-              <HelloWorld name={siskot[1] }/>
-              <HelloWorld name={siskot[2] }/>
+            <div class='asd'>
+              <HelloWorld />
+
              </div>
             );
     }
@@ -19,10 +19,22 @@ var HelloContainer = React.createClass({
 var HelloWorld = React.createClass({
 
     getInitialState: function() {
-        return {color: 'blue'};
+        return {color: 'blue', name: siskot[currentSister]};
     },
-    handleClick: function() {
-        this.setState({ color: 'red' });
+    handleClick: function () {
+        var myColor;
+        currentSister++;
+        if (currentSister == siskot.length) currentSister = 0;
+        if (this.state.color == 'blue') 
+        {
+            myColor = 'red'
+        }
+        else
+        {
+            myColor = 'blue'
+        }
+        this.setState({ color: myColor, name: siskot[currentSister] });
+
     },
     render: function () {
 
@@ -31,7 +43,7 @@ var HelloWorld = React.createClass({
         };
 
         return (
-            <div onClick={this.handleClick} style={divstyle} > Hello {this.props.name} </div>
+            <div onClick={this.handleClick} style={divstyle} > Hello {this.state.name} </div>
         )
     }
 
