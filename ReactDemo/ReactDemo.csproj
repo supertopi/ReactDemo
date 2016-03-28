@@ -147,7 +147,11 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\web.config" />
-    <Content Include="Scripts\topi.jsx" />
+    <Content Include="Scripts\Components\Navigation.jsx" />
+    <Content Include="Scripts\App.jsx" />
+    <Content Include="Data\home.json" />
+    <Content Include="Data\shop.json" />
+    <Content Include="Data\about.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
