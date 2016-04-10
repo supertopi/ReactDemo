@@ -1,4 +1,4 @@
 # ReactDemo
-Using React components on a simple web site. Built with ReactJS.NET
+Using React components for a simple navigation. Built with ReactJS.NET
 
 
